@@ -64,20 +64,13 @@ RÈGLES STRICTES :
 // HANDLER PRINCIPAL
 // ============================================
 export default async function handler(req, res) {
-    // CORS — autoriser le site MimiCronut
+    // CORS — autoriser uniquement mimicronut.org
     const allowedOrigins = [
         'https://mimicronut.org',
         'http://mimicronut.org',
         'https://www.mimicronut.org',
         'http://www.mimicronut.org',
-        'null',  // fichiers ouverts en local (file://)
     ];
-
-    // En dev, autoriser aussi localhost
-    if (process.env.NODE_ENV !== 'production') {
-        allowedOrigins.push('http://localhost:3000', 'http://127.0.0.1:3000');
-    }
-
     const origin = req.headers.origin;
     if (allowedOrigins.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);

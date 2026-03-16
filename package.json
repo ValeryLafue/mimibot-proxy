@@ -1,0 +1,7 @@
+{
+  "name": "mimibot-proxy",
+  "version": "1.0.0",
+  "description": "Proxy API MimiBot — MimiCronut",
+  "private": true,
+  "type": "module"
+}

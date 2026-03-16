@@ -70,11 +70,12 @@ export default async function handler(req, res) {
         'http://mimicronut.org',
         'https://www.mimicronut.org',
         'http://www.mimicronut.org',
+        'null',  // fichiers ouverts en local (file://)
     ];
 
     // En dev, autoriser aussi localhost
     if (process.env.NODE_ENV !== 'production') {
-        allowedOrigins.push('http://localhost:3000', 'http://127.0.0.1:3000', 'null');
+        allowedOrigins.push('http://localhost:3000', 'http://127.0.0.1:3000');
     }
 
     const origin = req.headers.origin;
